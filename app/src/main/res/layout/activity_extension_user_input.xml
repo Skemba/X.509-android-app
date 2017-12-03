@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="rs.ac.bg.etf.certificate509.x509.ExtensionUserInput">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/extension_fields"
+                android:id="@+id/extensionFileds"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp" />
+
+            <Button
+        android:id="@+id/expandableButton1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:drawableRight="@android:drawable/arrow_down_float"
+        android:onClick="expandableButton1"
+        android:paddingRight="10dp"
+        android:text="@string/basic_constraints"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp" />
+
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/expandableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expandableButton1"
+        android:background="#ffffff"
+        android:padding="16dp"
+        app:ael_duration="400"
+        app:ael_expanded="false"
+        app:ael_interpolator="bounce"
+        app:ael_orientation="vertical">
+
+
+
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/critical_basic_constr"
+            android:id="@+id/isCriticalBasicConstrains"
+            android:layout_alignParentTop="true" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/is_certificate"
+            android:id="@+id/isCA"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/path_length"
+            android:id="@+id/pathLenText"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:visibility="invisible"
+            android:layout_marginTop="80dp"
+            android:textColor="#000000" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/pathLen"
+            android:layout_toRightOf="@+id/pathLenText"
+            android:layout_toEndOf="@+id/pathLenText"
+            android:layout_marginLeft="23dp"
+            android:visibility="invisible"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="80dp" />
+
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+    <Button
+        android:id="@+id/expandableButton2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expandableLayout1"
+        android:background="@color/colorPrimary"
+        android:drawableRight="@android:drawable/arrow_down_float"
+        android:onClick="expandableButton2"
+        android:paddingRight="10dp"
+        android:text="Issuer alternative name"
+        android:textColor="#fff" />
+
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/expandableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/expandableButton2"
+        android:background="#ffffff"
+        android:padding="16dp"
+        app:ael_duration="400"
+        app:ael_expanded="false"
+        app:ael_interpolator="bounce"
+        app:ael_orientation="vertical">
+
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/useIssuerAltName"
+            android:text="@string/use_issuer_alt"
+            android:textSize="12sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="@string/issuer_alt_name_critical"
+            android:id="@+id/isCriticalIssuerAltName"
+            android:layout_below="@+id/useIssuerAltName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/issuer_email"
+            android:id="@+id/emailText"
+            android:visibility="invisible"
+            android:textColor="#000000"
+            android:layout_below="@+id/isCriticalIssuerAltName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/email"
+            android:visibility="invisible"
+            android:layout_below="@+id/emailText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dns_name"
+            android:id="@+id/dnsNameText"
+            android:visibility="invisible"
+            android:textColor="#000000"
+            android:layout_below="@+id/email"
+            android:layout_alignRight="@+id/ipAddressText"
+            android:layout_alignEnd="@+id/ipAddressText" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:visibility="invisible"
+            android:id="@+id/dns"
+            android:layout_below="@+id/dnsNameText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:visibility="invisible"
+            android:id="@+id/ipAddress"
+            android:layout_below="@+id/ipAddressText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ip_address"
+            android:id="@+id/ipAddressText"
+            android:textColor="#000000"
+            android:visibility="invisible"
+            android:layout_below="@+id/dns"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uri"
+            android:id="@+id/uriText"
+            android:textColor="#000000"
+            android:layout_below="@+id/ipAddress"
+            android:layout_alignParentLeft="true"
+            android:visibility="invisible"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:ems="10"
+            android:id="@+id/uri"
+            android:visibility="invisible"
+            android:layout_below="@+id/uriText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="50dp" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="none"
+        android:visibility="invisible"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="none"
+            android:visibility="invisible"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="none"
+            android:visibility="invisible"
+            />
+
+
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+    <Button
+        android:id="@+id/expandableButton3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expandableLayout2"
+        android:background="@color/colorPrimary"
+        android:drawableRight="@android:drawable/arrow_down_float"
+        android:onClick="expandableButton3"
+        android:paddingRight="10dp"
+        android:text="Key usage"
+        android:textColor="#fff" />
+
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/expandableLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/expandableButton3"
+        android:background="#ffffff"
+        android:padding="16dp"
+        app:ael_duration="400"
+        app:ael_expanded="false"
+        app:ael_interpolator="bounce"
+        app:ael_orientation="vertical">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/useKeyUsage"
+            android:text="@string/use_key_usage"
+            android:textSize="12sp"
+            android:layout_alignParentTop="true"
+            />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/key_usage_critical"
+            android:id="@+id/isCriticalKeyUsage"
+            android:layout_below="@+id/useKeyUsage"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp" />
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/digital_signature"
+            android:id="@+id/digSign"
+            android:visibility="invisible"
+            android:layout_below="@+id/isCriticalKeyUsage"
+            android:textSize="12sp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/non_repundiant"
+            android:visibility="invisible"
+            android:id="@+id/nonRepudiation"
+            android:layout_below="@+id/digSign"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="12sp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/key_encipherment"
+            android:visibility="invisible"
+            android:id="@+id/keyEncipherment"
+            android:layout_below="@+id/nonRepudiation"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="12sp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/data_encipherment"
+            android:id="@+id/dataEncipherment"
+            android:visibility="invisible"
+            android:layout_below="@+id/keyEncipherment"
+            android:textSize="12sp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/key_agreement"
+            android:id="@+id/keyAgreement"
+            android:visibility="invisible"
+            android:layout_below="@+id/dataEncipherment"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="12sp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/key_cert_sign"
+            android:id="@+id/keyCertSign"
+            android:visibility="invisible"
+            android:layout_above="@+id/dataEncipherment"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="12sp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crl_sign"
+            android:visibility="invisible"
+            android:id="@+id/cRLSign"
+            android:layout_below="@+id/encipherOnly"
+            android:layout_alignLeft="@+id/keyCertSign"
+            android:layout_alignStart="@+id/keyCertSign"
+            android:textSize="12sp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/encipher_only"
+            android:visibility="invisible"
+            android:id="@+id/encipherOnly"
+            android:layout_above="@+id/nonRepudiation"
+            android:layout_alignLeft="@+id/cRLSign"
+            android:layout_alignStart="@+id/cRLSign"
+            android:textSize="12sp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/decipher_only"
+            android:visibility="invisible"
+            android:id="@+id/decipherOnly"
+            android:layout_below="@+id/keyCertSign"
+            android:layout_alignLeft="@+id/keyCertSign"
+            android:layout_alignStart="@+id/keyCertSign"
+            android:textSize="12sp"/>
+
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generate"
+                android:id="@+id/generate"
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="156dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="45dp"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

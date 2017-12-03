@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/key_usage_critical"
+        android:id="@+id/isCriticalKeyUsage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" />
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/digital_signature"
+        android:id="@+id/digSign"
+        android:layout_below="@+id/isCriticalKeyUsage"
+        android:textSize="12sp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/non_repundiant"
+        android:id="@+id/nonRepudiation"
+        android:layout_below="@+id/digSign"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="12sp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/key_encipherment"
+        android:id="@+id/keyEncipherment"
+        android:layout_below="@+id/nonRepudiation"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="12sp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_encipherment"
+        android:id="@+id/dataEncipherment"
+        android:layout_below="@+id/keyEncipherment"
+        android:textSize="12sp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/key_agreement"
+        android:id="@+id/keyAgreement"
+        android:layout_below="@+id/dataEncipherment"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="12sp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/key_cert_sign"
+        android:id="@+id/keyCertSign"
+        android:layout_above="@+id/dataEncipherment"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="12sp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/crl_sign"
+        android:id="@+id/cRLSign"
+        android:layout_below="@+id/encipherOnly"
+        android:layout_alignLeft="@+id/keyCertSign"
+        android:layout_alignStart="@+id/keyCertSign"
+        android:textSize="12sp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/encipher_only"
+        android:id="@+id/encipherOnly"
+        android:layout_above="@+id/nonRepudiation"
+        android:layout_alignLeft="@+id/cRLSign"
+        android:layout_alignStart="@+id/cRLSign"
+        android:textSize="12sp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/decipher_only"
+        android:id="@+id/decipherOnly"
+        android:layout_below="@+id/keyCertSign"
+        android:layout_alignLeft="@+id/keyCertSign"
+        android:layout_alignStart="@+id/keyCertSign"
+        android:textSize="12sp"/>
+</RelativeLayout>

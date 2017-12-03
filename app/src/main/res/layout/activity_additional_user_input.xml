@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".AdditionalUserInput">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/common_name"
+        android:id="@+id/cn"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/o"
+        android:layout_alignEnd="@+id/o"
+        android:layout_marginTop="32dp" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/cnEdit"
+        android:layout_below="@+id/cn"
+        android:layout_alignLeft="@+id/ouEdit"
+        android:layout_alignStart="@+id/ouEdit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/organization_unit"
+        android:id="@+id/ou"
+        android:textSize="20sp"
+        android:layout_below="@+id/cnEdit"
+        android:layout_alignLeft="@+id/cn"
+        android:layout_alignStart="@+id/cn" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/ouEdit"
+        android:layout_below="@+id/ou"
+        android:layout_alignLeft="@+id/oEdit"
+        android:layout_alignStart="@+id/oEdit" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/organization"
+        android:id="@+id/o"
+        android:textSize="20sp"
+        android:layout_below="@+id/ouEdit"
+        android:layout_alignRight="@+id/c"
+        android:layout_alignEnd="@+id/c" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/oEdit"
+        android:layout_below="@+id/o"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/locality"
+        android:id="@+id/l"
+        android:textSize="20sp"
+        android:layout_below="@+id/oEdit"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/lEdit"
+        android:layout_below="@+id/l"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/state_or_province_name"
+        android:id="@+id/st"
+        android:textSize="20sp"
+        android:layout_below="@+id/lEdit"
+        android:layout_alignLeft="@+id/lEdit"
+        android:layout_alignStart="@+id/lEdit" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/stEdit"
+        android:layout_below="@+id/st"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contry_name"
+        android:id="@+id/c"
+        android:textSize="20sp"
+        android:layout_below="@+id/stEdit"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/cEdit"
+        android:layout_below="@+id/c"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next_page"
+        android:id="@+id/nextPageButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
